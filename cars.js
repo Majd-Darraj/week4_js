@@ -35,24 +35,43 @@ function generateCars(numberOfCars) {
     return cars;
 }
 
-
-
 let Cars = generateCars(10);
-//console.log(Cars);
 
-// 1.1: Cars with speeds between 30 and 60
+/*--
+1.1: Cars with speeds between 30 and 60
+--*/
 let carsSpeedLimit = Cars.filter(speed => speed.speed >= 30 && speed.speed <= 60);
 
 console.log(carsSpeedLimit);
 
-//1.2: The makes of the cars that are not lightyellow, so the array is going to look like this: ['BMW', 'Fiat'] etc
 
+/*--
+1.2: The makes of the cars that are not lightyellow.
+--*/
 // filter the lightyellow cars
-let notLightyellowColor = Cars.filter(color => color.color !== 'lightyellow');
-// make a new array contains only make
-let carsMakeOnly = notLightyellowColor.map(make => make.make);
+let notLightyellowColor = Cars
+.filter(color => color.color !== 'lightyellow')
+// map the make
+.map(make => make.make)
+// filter the duplicated make items (https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array)
+.filter((car, pos, self) => self.indexOf(car) == pos)
 
-console.log(carsMakeOnly);
+console.log(notLightyellowColor);
+
+
+/*-- 
+1.3: Lets change the cars array so it can be read by a danish person. 
+--*/
+
+
+
+
+
+
+obj = { name: 'Bobo' }
+obj.somethingElse = obj.name
+delete obj.name
+
 
 
 
