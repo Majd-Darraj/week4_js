@@ -62,20 +62,12 @@ console.log(notLightyellowColor);
 /*-- 
 1.3: Lets change the cars array so it can be read by a danish person. 
 --*/
-
-
-
-
-
-
-obj = { name: 'Bobo' }
-obj.somethingElse = obj.name
-delete obj.name
-
-
-
-
-
+let carsDanish = Cars.map(car => ({
+        fart: car.speed,
+        farve: car.color,
+        maerke: car.make
+}));
+console.log(carsDanish);
 
 
 
