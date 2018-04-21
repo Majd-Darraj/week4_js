@@ -35,6 +35,9 @@ function generateCars(numberOfCars) {
     return cars;
 }
 
+
+
+
 let Cars = generateCars(10);
 
 /*--
